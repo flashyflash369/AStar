@@ -14,7 +14,7 @@ public class Node
 
 
     public float f, g, h;
-    public GameObject cameFrom;
+    public Node cameFrom;
 
 
     public Node(GameObject id)
