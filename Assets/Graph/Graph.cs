@@ -125,6 +125,24 @@ public class Graph
         return null;
     }
 
+
+    public void ReconstructPath(Node startId, Node endId)
+    {
+        pathList.Clear();
+        pathList.Add(endId);
+        
+        var p = endId.cameFrom;
+
+        while(p != startId && p != null)
+        {
+            pathList.Insert(0, p);
+            p = p.cameFrom;
+        }
+
+        pathList.Insert(0, startId);
+    }
+
+
     public float distance(Node a, Node b)
     {
         return (Vector3.SqrMagnitude(a.GetId().transform.position - b.GetId().transform.position));
