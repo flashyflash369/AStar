@@ -15,10 +15,10 @@ public struct Link
 
 public class WPManager : MonoBehaviour
 {
-   public GameObject[] waypoints;
-   public Link[] links;
+    public GameObject[] waypoints;
+    public Link[] links;
 
-    private Graph graph = new Graph();
+    public Graph graph = new Graph();
 
     public void Start()
     {
