@@ -5,9 +5,9 @@ using UnityEngine;
 public class Graph 
 {
 
-    public List<Edge> edges = new List<Edge>();
+    List<Edge> edges = new List<Edge>();
 
-    public List<Node> nodes = new List<Node>();
+    List<Node> nodes = new List<Node>();
     public List<Node> pathList;
 
     public Graph() { }

@@ -37,8 +37,17 @@ public class FollowWP : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
-        
+        for(int i = 0; i < graph.pathList.Count; i++)
+        {
+            currentNode = graph.pathList[i].GetId();
+            Quaternion rotation = Quaternion.LookRotation(currentNode.transform.position - this.transform.position);
+            this.transform.rotation = Quaternion.Slerp(this.transform.rotation, rotation, rotSpeed * Time.deltaTime);
+            while(Vector3.Distance(this.transform.position, currentNode.transform.position) > accuracy)
+            {
+                this.transform.Translate(0, 0, speed * Time.deltaTime);
+            }
+        }
     }
 }
