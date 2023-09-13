@@ -8,7 +8,7 @@ public class Graph
     List<Edge> edges = new List<Edge>();
 
     List<Node> nodes = new List<Node>();
-    public List<Node> pathList;
+    public List<Node> pathList = new List<Node>();
 
     public Graph() { }
 
@@ -42,7 +42,7 @@ public class Graph
 
             if(thisNode.GetId() == end)
             {
-                //Build path;
+                ReconstructPath(startNode, endNode);
                 return true;
             }
 
